@@ -1,0 +1,302 @@
+body.modal-open {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, .56);
+};
+
+.modal {
+    position: fixed;
+    z-index: 3;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    margin: 0 auto;
+    width: 700px;
+    height: 608px;
+    padding: 40px 50px 20px 50px;
+    background-color: #222222;
+    // background-color: $gray;
+    border: 3px solid $orange;
+    &__close {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        font-size: 40px;
+        color: $gray;
+        cursor: pointer;
+        @include close_hover ();
+    }
+    &__title {
+        font-family: $font;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 130%;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: $white;
+    }
+    &__subtitle {
+        display: block;
+        margin: 0 auto;
+        width: 430px;
+        margin-top: 10px;
+        font-family: $font;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 0.09em;
+        color: $gray;
+    }
+    &__name {
+        padding-left: 10px;
+        margin-top: 14px;
+        width: 600px;
+        height: 30px;
+        border: none;
+        border: 1px solid #C4C4C4;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background-color: #222222;
+
+        font-family: $font;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 22px;
+        align-items: center;
+        letter-spacing: 0.09em;
+        color: $white;
+    }
+    &__phone {
+        padding-left: 10px;
+        margin-top: 20px;
+        width: 600px;
+        height: 30px;
+        border: none;
+        border: 1px solid #C4C4C4;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background-color: #222222;
+
+        font-family: $font;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 22px;
+        align-items: center;
+        letter-spacing: 0.09em;
+        color: $white;
+    }
+    &__radio-descr {
+        margin-bottom: 5px;
+        margin-top: 20px;
+        font-family: $font;
+        font-style: 300;
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 0.09em;
+        color: $white;
+    }
+    &__radio {
+        margin-top: 0;
+    }
+    &__radio {
+        &:first-child {
+        margin-top: 15px;
+        }
+    }
+    &__radio input[type=radio] {
+        display: none;
+    }
+    &__radio label {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        padding-left: 25px;
+        margin-right: 0;
+        line-height: 18px;
+        user-select: none;
+    
+        font-family: $font;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.09em;
+        color: $white;
+    }
+    &__radio label:before {
+        content: "";
+        display: inline-block;
+        width: 17px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        background: url(../../icons/radio_empty.png) 0 0 no-repeat;
+    }
+    &__radio input[type=radio]:checked + label:before {
+        background: url(../../icons/radio_fill.png) 0 0 no-repeat;
+    }
+    &__radio input[type=radio]:checked + label {
+        color: $orange;
+    }
+    &__descr {
+        display: block;
+        margin: 0 auto;
+        width: 410px;
+        font-family: $font;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.09em;
+        color: $gray;
+    }
+    button {
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    &_mini {
+        height: 128px;
+        width: 470px;
+        padding: 30px 30px 20px 30px;
+        &__title {
+            display: block;
+            margin: 0 auto;
+            width: 380px;
+        }
+        &__subtitle {
+            width: 220px;
+            display: block;
+            margin: 0 auto;
+        }
+        &__close {
+            top: -10px;
+            right: 10px;
+        }
+    }
+    &_callback {
+        width: 680px;
+        height: 300px;
+        top: 150px;
+        button {
+            margin-top: 10px;
+        }
+        &__descr {
+            margin-top: 20px;
+        }
+        &__name {
+            width: 574px;
+        }
+        &__phone {
+            width: 574px;
+        }
+    }
+}
+
+
+.feed-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#price, #thanks, #popup-eyebrows, #popup-lips, #popup-eyes, #popup-qualification, #popup-micro, #popup-all, #popup-allmicro {
+    display: none;
+}
+
+
+//POPUPS
+
+.popup {
+    position: fixed;
+    z-index: 3;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: auto;
+
+    width: 680px;
+    height: 650px;
+    background-color: #222222;
+    border: 3px solid $orange;
+    padding: 40px;
+    &__close {
+        left: 630px;
+        margin-top: -40px;
+        position: absolute;
+        // top: 0;
+        // right: 20px;
+        font-size: 40px;
+        color: $gray;
+        cursor: pointer;
+        @include close_hover ();
+    }
+    &__title {
+        font-family: $font;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: $orange;
+    }
+    &__subtitle {
+        margin-top: 20px;
+        font-family: $font;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 25px;
+        align-items: left;
+        letter-spacing: 0.09em;
+        color: $white;
+    }
+    &__youWillKnow {
+        margin-top: 10px;
+        font-family: $font;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 22px;
+        align-items: left;
+        letter-spacing: 0.09em;
+        color: $orange;
+        span {
+            color: $gray;
+        }
+    }
+    &__div {
+        margin-top: 15px;
+        height: 1px;
+        width: 600px;
+        background: #5B5A5A;
+    }
+    &__body {
+        margin-top: 15px;
+        font-family: $font;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 0.09em;
+        color: $white;
+    }
+    &_m {
+        width: 1060px;
+        &__div {
+            width: 980px;
+        }
+        &__close {
+            left: 1000px;
+        }
+    }
+}

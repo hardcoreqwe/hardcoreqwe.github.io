@@ -1,0 +1,49 @@
+@mixin btn_hover () {
+    cursor: pointer;
+    &:hover {
+        transition: 0.5s all;
+        background-color: #E68A00;
+    };
+    &:active {
+        background-color: #9A5C00;
+        border: none;
+    };
+    &:focus {
+        background-color: #E68A00;
+        // border: 3px solid #9A5C00;
+    };
+};
+
+@mixin close_hover () {
+    &:hover {
+        transition: 0.15s all;
+        color: $white;
+    }
+}
+
+@mixin nav_hover () {
+    &:hover {
+        transition: 0.15s all;
+        color: #E68A00;
+        text-decoration: none;
+    };
+};
+
+@mixin link_hover () {
+    &:hover {
+        transition: 0.15s all;
+        color: #9A5C00;
+        text-decoration: none;
+    }
+}
+
+@mixin tab_hover () {
+    &:hover {
+        transition: 0.3s all;
+        filter: grayscale(20%);
+        color: $orange;
+        span {
+            color: $orange;
+        }
+    }
+}

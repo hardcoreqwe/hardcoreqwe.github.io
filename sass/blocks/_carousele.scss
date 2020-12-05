@@ -1,0 +1,62 @@
+.carousele {
+    margin-top: 30px;
+    min-height: 310px;
+    &__inner {
+        position: relative;
+        width: 950px;
+        margin: 0 auto;
+        max-height: 350px;
+    }
+    &__photo {
+        margin: 0 10px;
+        img {
+            max-width: 350px;
+            max-height: 350px;
+        }
+    }
+    .slick-prev {
+        position: absolute;
+        border: none;
+        background-color: rgba(0, 0, 0, 0);
+        top: 30%;
+        transform: translateY(-50%);
+        left: -70px;
+        cursor: pointer;
+        img {
+            width: 32px;
+            height: 93px;
+        }
+        @media (min-width: 1024px) and (max-width: 1120px) {
+            left: -30px;
+        }
+        @media (max-width: 1023px) {
+            left: 200px;
+        }
+    }
+    .slick-next {
+        position: absolute;
+        border: none;
+        background-color: rgba(0, 0, 0, 0);
+        top: 30%;
+        transform: translateY(-50%);
+        right: -70px;
+        cursor: pointer;
+        img {
+            width: 32px;
+            height: 93px;
+        }
+        @media (min-width: 1024px) and (max-width: 1120px) {
+            right: -30px;
+        }
+        @media (max-width: 1023px) {
+            right: 200px;
+        }
+    }
+    // .slick-arrow {
+    //     img {
+    //         width: 32px;
+    //         height: 93px;
+    //     }
+    // }
+}
+
